@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: student
+spec:
+ replicas: 1
+ selector:
+ matchLabels:
+ app: student
+ template:
+ metadata:
+ labels:
+ app: student
+ spec:
+ containers:
+ - name: static-web
+ image: sivakiranpolu/static-web:latest
